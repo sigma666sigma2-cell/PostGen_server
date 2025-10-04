@@ -1,0 +1,6 @@
+fastapi
+pydantic
+openai
+bs4
+requests
+uvicorn
