@@ -15,13 +15,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-@app.get("/")
-def root():
-    return {"status": "ok", "message": "Server is running!"}
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="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"
 )
 
 class GenerateRequest(BaseModel):
@@ -57,5 +54,4 @@ async def log_request(request: Request, call_next):
 
 if __name__ == "__main__":
     import uvicorn
-
     uvicorn.run("apirequest:app", host="0.0.0.0", port=5000, reload=True)
